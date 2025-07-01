@@ -1,0 +1,133 @@
+/* Base styles for app download section */
+.app-download {
+    margin: auto auto;
+    margin-top: 100px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.app-download-plateforms {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.app-download-plateforms img {
+    width: 180px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.app-download-plateforms img:hover {
+    transform: scale(1.05);
+}
+
+.orange-text {
+    color: rgb(232, 132, 9);
+}
+
+/* Responsive styles for all tabs/sections */
+@media screen and (max-width: 1200px) {
+    /* Laptop screens */
+    .app-download {
+        margin-top: 80px;
+        font-size: 18px;
+    }
+    
+    .app-download-plateforms {
+        gap: 15px;
+    }
+    
+    .app-download-plateforms img {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Small laptop/large tablet screens */
+    .app-download {
+        margin-top: 70px;
+        font-size: 16px;
+    }
+    
+    .app-download-plateforms img {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet screens */
+    .app-download {
+        margin-top: 60px;
+        font-size: 3vw;
+    }
+    
+    .app-download-plateforms {
+        flex-wrap: wrap;
+    }
+    
+    .app-download-plateforms img {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Mobile screens */
+    .app-download {
+        margin-top: 50px;
+        font-size: 4vw;
+        padding: 0 15px;
+    }
+    
+    .app-download-plateforms {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .app-download-plateforms img {
+        width: 50vw;
+        max-width: 160px;
+    }
+}
+
+/* Global responsive styles for all tabs/sections */
+.tab-content {
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .tab-content {
+        padding: 10px;
+    }
+    
+    /* Adjust text sizes for better readability on mobile */
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Additional adjustments for very small screens */
+    h1 {
+        font-size: 22px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+}

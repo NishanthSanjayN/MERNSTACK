@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Base reset and global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Set viewport basics */
+html {
+  font-size: 16px; /* Base font size for rem calculations */
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main container with responsive width */
+.app {
+  width: 80%;
+  max-width: 1440px; /* Prevent excessive stretching on ultra-wide screens */
+  margin: 0 auto;
+  padding: 0 1rem;
+  transition: width 0.3s ease; /* Smooth transition for screen size changes */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation class for elements */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Extra large screens (1440px and up) */
+@media (min-width: 1440px) {
+  .app {
+    width: 75%;
+  }
+}
+
+/* Large screens (laptops/desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .app {
+    width: 80%;
+  }
+}
+
+/* Medium-sized screens (small laptops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .app {
+    width: 85%;
+  }
+  
+  html {
+    font-size: 15px; /* Slightly decrease base font size */
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .app {
+    width: 90%;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Large mobile devices (576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .app {
+    width: 95%;
+    padding: 0 0.75rem;
+  }
+  
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Small mobile devices (575px and down) */
+@media (max-width: 575px) {
+  .app {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Extra small mobile devices (400px and down) */
+@media (max-width: 400px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+/* Device-specific adjustments */
+
+/* For Safari on iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* Fix for 100vh behavior on iOS Safari */
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  body {
+    /* Accommodate for browser UI in landscape */
+    min-height: 100%;
+  }
+}
+
+/* Device toggle mode indicator (optional) - Shows the current breakpoint */
+body::after {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: 9999;
+  content: "XL: 1440px+";
+}
+
+/* Toggle device mode visual indicators - Uncomment for development */
+/*
+@media (max-width: 1439px) { body::after { content: "LG: 1200-1439px"; display: block; } }
+@media (max-width: 1199px) { body::after { content: "MD: 992-1199px"; display: block; } }
+@media (max-width: 991px) { body::after { content: "SM: 768-991px"; display: block; } }
+@media (max-width: 767px) { body::after { content: "XS: 576-767px"; display: block; } }
+@media (max-width: 575px) { body::after { content: "XXS: 400-575px"; display: block; } }
+@media (max-width: 400px) { body::after { content: "XXXS: <400px"; display: block; } }
+*/
+
+/* Print media query */
+@media print {
+  .app {
+    width: 100%;
+    padding: 0;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* Dark mode support - if system preference is dark */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if needed */
+}
+
+/* Utility classes for responsive design */
+.hide-on-mobile {
+  display: block;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  .show-on-mobile {
+    display: block;
+  }
+}
+
+/* Responsive text utilities */
+.responsive-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.responsive-heading {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Accessibility - better focus indicators */
+:focus {
+  outline: 2px solid #e68506;
+  outline-offset: 2px;
+}
+
+/* Smooth scroll behavior for internal links */
+html {
+  scroll-padding-top: 2rem; /* Ensures anchors don't get hidden under fixed headers */
+}

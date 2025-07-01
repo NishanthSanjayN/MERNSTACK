@@ -1,0 +1,239 @@
+/* Responsive Header and Button Styles */
+.header {
+    height: clamp(250px, 34vw, 600px);
+    margin: clamp(15px, 3vw, 30px) auto;
+    background: url('/header_img.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(10px, 1.5vw, 25px);
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: clamp(22px, 4.5vw, 54px);
+    margin: 0 0 clamp(5px, 1vw, 15px) 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-contents p {
+    color: white;
+    font-size: clamp(14px, 1vw, 18px);
+    margin: 0 0 clamp(10px, 1.5vw, 20px) 0;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.header-contents button {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.menu-button {
+    padding: clamp(10px, 1.2vw, 20px) clamp(15px, 2vw, 30px);
+    background: rgba(237, 133, 85, 0.75);
+    background: linear-gradient(135deg, #ed8555c0, #ed8555c0);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(14px, 1vw, 17px);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(63, 81, 181, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-align: center;
+}
+
+.menu-button:hover {
+    background: linear-gradient(135deg, #ed8555, #ed8555);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(63, 81, 181, 0.4);
+}
+
+.menu-button:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 10px rgba(237, 133, 85, 0.7);
+}
+
+.menu-button.active {
+    background: linear-gradient(135deg, #ed8555, #ed8555);
+    box-shadow: 0 4px 10px rgba(237, 133, 85, 0.7);
+}
+
+/* Keyframes for fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Breakpoints - Mobile First Approach */
+/* Base styles are for mobile, then we scale up */
+
+/* Small devices (phones under 480px) */
+@media screen and (max-width: 479px) {
+    .header {
+        height: 65vw;
+        margin: 10px auto;
+    }
+    
+    .header-contents {
+        max-width: 85%;
+        left: 5vw;
+        bottom: 8%;
+        gap: 8px;
+    }
+    
+    .header-contents h2 {
+        font-size: 18px;
+    }
+    
+    .header-contents p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .menu-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Small devices (large phones, 480px and up) */
+@media screen and (min-width: 480px) and (max-width: 749px) {
+    .header {
+        height: 65vw;
+        margin: 15px auto;
+    }
+    
+    .header-contents {
+        max-width: 75%;
+        left: 5vw;
+        bottom: 8%;
+        gap: 12px;
+    }
+    
+    .header-contents h2 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+    
+    .header-contents p {
+        display: block;
+        font-size: 14px;
+    }
+    
+    .menu-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Medium devices (tablets, 750px and up) */
+@media screen and (min-width: 750px) and (max-width: 899px) {
+    .header {
+        height: 55vw;
+        margin: 20px auto;
+    }
+    
+    .header-contents {
+        max-width: 65%;
+        bottom: 8%;
+    }
+    
+    .header-contents p {
+        display: block;
+        font-size: clamp(14px, 1vw, 16px);
+    }
+    
+    .menu-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Large devices (desktops, 900px and up) */
+@media screen and (min-width: 900px) and (max-width: 1049px) {
+    .header {
+        height: 45vw;
+    }
+    
+    .header-contents {
+        max-width: 55%;
+        bottom: 8%;
+    }
+    
+    .header-contents h2 {
+        font-size: clamp(20px, 4vw, 28px);
+    }
+}
+
+/* X-Large devices (large desktops, 1050px and up) */
+@media screen and (min-width: 1050px) and (max-width: 1199px) {
+    .header-contents {
+        max-width: 45%;
+        bottom: 8%;
+    }
+    
+    .menu-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1200px and up) */
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .header-contents {
+        max-width: 55%;
+    }
+    
+    .menu-button {
+        padding: 12px 22px;
+        font-size: 15px;
+    }
+    
+    .header-contents h2 {
+        font-size: clamp(22px, 4.5vw, 40px);
+    }
+}
+
+/* XXX-Large devices (extra large desktops, 1400px and up) */
+@media screen and (min-width: 1400px) {
+    .header {
+        height: 480px; /* Fixed height for very large screens */
+        background-position: center;
+    }
+    
+    .header-contents {
+        bottom: 15%;
+    }
+    
+    .header-contents h2 {
+        font-size: clamp(24px, 4.5vw, 54px);
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": 1, "name": "Pizza", "category": "Food" },
+    { "id": 2, "name": "Burger", "category": "Food" },
+    { "id": 3, "name": "Coke", "category": "Drinks" }
+  ]
+}

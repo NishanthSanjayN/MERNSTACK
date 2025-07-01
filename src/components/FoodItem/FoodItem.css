@@ -1,0 +1,160 @@
+/* Main Food Item Container */
+.food-item {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Food Item Image */
+.food-item-image {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+}
+
+/* Food Item Info Section */
+.food-item-info {
+    padding: 20px;
+}
+
+.food-item-name-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.food-item-name-rating img {
+    width: 70px;
+}
+
+/* Food Item Description */
+.food-item-desc {
+    color: #676767;
+    font-size: 12px;
+}
+
+.food-item-price {
+    color: tomato;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+/* Food Item Image Container */
+.food-item-img-container {
+    position: relative;
+}
+
+.food-item-img-container .add {
+    width: 32px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.food-item-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-counter img {
+    width: 30px;
+}
+
+/* --- Responsive Design --- */
+
+/* Tablets (Screen width up to 768px) */
+@media (max-width: 768px) {
+    .food-item {
+        width: 90%; /* Reduce width for tablets */
+        margin: 10px auto; /* Add spacing for multiple items */
+    }
+
+    .food-item-name-rating p {
+        font-size: 18px; /* Adjust font size for tablets */
+    }
+
+    .food-item-name-rating img {
+        width: 60px; /* Reduce rating star size */
+    }
+
+    .food-item-desc {
+        font-size: 14px; /* Increase description font size for readability */
+    }
+
+    .food-item-price {
+        font-size: 20px; /* Adjust price font size */
+    }
+
+    .food-item-img-container .add {
+        width: 28px; /* Reduce add button size */
+    }
+
+    .food-item-counter img {
+        width: 25px; /* Reduce counter button size */
+    }
+
+    .food-item-counter {
+        gap: 8px;
+        padding: 5px;
+    }
+}
+
+/* Mobile Devices (Screen width up to 480px) */
+@media (max-width: 480px) {
+    .food-item {
+        width: 100%; /* Full width for mobile */
+        margin: 10px auto; /* Add spacing for multiple items */
+    }
+
+    .food-item-name-rating p {
+        font-size: 16px; /* Reduce font size for mobile */
+    }
+
+    .food-item-name-rating img {
+        width: 50px; /* Further reduce rating star size */
+    }
+
+    .food-item-desc {
+        font-size: 12px; /* Smaller description font size */
+    }
+
+    .food-item-price {
+        font-size: 18px; /* Adjust price font size */
+    }
+
+    .food-item-img-container .add {
+        width: 24px; /* Further reduce add button size */
+    }
+
+    .food-item-counter img {
+        width: 20px; /* Adjust counter button size */
+    }
+
+    .food-item-counter {
+        gap: 6px;
+        padding: 4px;
+    }
+}

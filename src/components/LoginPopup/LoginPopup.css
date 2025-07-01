@@ -1,0 +1,187 @@
+/* Login Popup Responsive Styles */
+.login-popup {
+    position: fixed; /* Fixed instead of absolute for better mobile experience */
+    top: 0;
+    left: 0;
+    z-index: 999; /* Higher z-index to ensure it's above all content */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly darker for better contrast */
+    display: grid;
+    place-items: center; /* Simplified centering */
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+.login-popup-container {
+    place-self: center;
+    width: clamp(300px, 23vw, 450px); /* More controlled width scaling */
+    max-width: 90%; /* Prevents overflow on very small screens */
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 2vw, 25px); /* Responsive gap */
+    padding: clamp(20px, 2vw, 30px); /* Responsive padding */
+    border-radius: 8px;
+    font-size: clamp(13px, 1vw, 14px); /* Responsive font size */
+    animation: fadeIn 0.5s;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Add shadow for better elevation */
+}
+
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin-bottom: clamp(5px, 1vw, 10px); /* Responsive margin */
+}
+
+.login-popup-title h2 {
+    font-size: clamp(18px, 1.5vw, 22px); /* Responsive heading */
+    margin: 0;
+}
+
+.login-popup-title img {
+    width: clamp(16px, 1.2vw, 20px); /* Responsive icon size */
+    height: auto;
+    cursor: pointer;
+    padding: 5px; /* Larger hit area for better mobile usability */
+    transition: all 0.2s ease;
+}
+
+.login-popup-title img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.login-popup-input {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 1.5vw, 20px); /* Responsive gap */
+    width: 100%;
+}
+
+.login-popup-input input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: clamp(8px, 1vw, 12px); /* Responsive padding */
+    border-radius: 4px;
+    font-size: clamp(13px, 1vw, 15px); /* Responsive font size */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't break layout */
+    transition: border-color 0.3s ease;
+}
+
+.login-popup-input input:focus {
+    border-color: tomato;
+    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.1); /* Subtle focus effect */
+}
+
+.login-popup-container button {
+    border: none;
+    padding: clamp(10px, 1.2vw, 14px); /* Responsive padding */
+    border-radius: 4px;
+    color: white;
+    background-color: tomato;
+    font-size: clamp(14px, 1.1vw, 16px); /* Responsive font size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 500;
+}
+
+.login-popup-container button:hover {
+    background-color: #e0442c; /* Darker shade of tomato for hover */
+    transform: translateY(-2px);
+}
+
+.login-popup-container button:active {
+    transform: translateY(0);
+}
+
+.login-popup-condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: clamp(-15px, -1.5vw, -10px); /* Responsive negative margin */
+    font-size: clamp(12px, 0.9vw, 13px); /* Smaller text for conditions */
+}
+
+.login-popup-condition input {
+    margin-top: 5px;
+    min-width: 16px; /* Prevent checkbox from being too small */
+    min-height: 16px; /* Prevent checkbox from being too small */
+}
+
+.login-popup p {
+    font-size: clamp(12px, 0.9vw, 14px); /* Responsive font size */
+    line-height: 1.5;
+    margin: 0;
+}
+
+.login-popup p span {
+    color: tomato;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.login-popup p span:hover {
+    color: #e0442c; /* Darker shade of tomato for hover */
+    text-decoration: underline;
+}
+
+/* Tablet Screens */
+@media (max-width: 1024px) {
+    .login-popup-container {
+        width: clamp(280px, 40vw, 400px);
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .login-popup-container {
+        width: 85%;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .login-popup-title {
+        margin-bottom: 5px;
+    }
+    
+    .login-popup-input {
+        gap: 15px;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+    .login-popup-container {
+        width: 90%;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .login-popup-condition {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .login-popup-condition input {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Animation for the popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

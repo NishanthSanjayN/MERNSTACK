@@ -1,0 +1,49 @@
+/* Food Display Container */
+.food-display {
+    margin-top: 30px;
+}
+
+/* Food Display Heading */
+.food-display h2 {
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+    text-align: center; /* Center-align the heading for better responsiveness */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+/* Food Display List Grid */
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Auto-adjust columns */
+    margin-top: 30px;
+    gap: 30px; /* Space between items */
+    row-gap: 50px;
+}
+
+/* --- Responsive Design --- */
+
+/* Tablets (Screen width up to 768px) */
+@media (max-width: 768px) {
+    .food-display h2 {
+        font-size: 20px; /* Adjust heading font size for tablets */
+    }
+
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Reduce column size */
+        gap: 20px; /* Reduce spacing between items */
+        row-gap: 40px; /* Reduce row gap */
+    }
+}
+
+/* Mobile Devices (Screen width up to 480px) */
+@media (max-width: 480px) {
+    .food-display h2 {
+        font-size: 18px; /* Smaller heading font size for mobile */
+    }
+
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Reduce column size further */
+        gap: 15px; /* Reduce spacing between items */
+        row-gap: 30px; /* Reduce row gap further */
+    }
+}
