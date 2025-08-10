@@ -14,12 +14,6 @@ const Header = () => {
       <div className="header-contents">
         <h2>Order your favourite food here</h2>
         <p>First Bite Love – Gourmet Meals So Good, You'll Crave Them Daily!</p>
-        <button 
-          onClick={handleViewMenu}
-          className="menu-button"
-        >
-          View Menu
-        </button>
       </div>
     </div>
   );
